@@ -1,7 +1,6 @@
 ---
-- name: nginxインストール
+- name: nginx setup
   hosts: all
   sudo: True
-  tasks:
-    - name: install the latest version of nginx
-      apt: name=nginx update_cache=yes cache_valid_time=3600
+  roles:
+    - role: vagrant_nginx
