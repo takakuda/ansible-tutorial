@@ -19,5 +19,10 @@
   template:
     src: nginx.conf.j2
     dest: /etc/nginx/sites-available/default
+
+- name: nginx本体の設定ファイルを変更
+  template:
+    src: n.conf.j2
+    dest: /etc/nginx/nginx.conf
   notify:
     - restart nginx
